@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.mchant.po.MchBrand" table="mch_brand" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mch_number" type="java.lang.String">
+            <column name="mch_number"/>
+        </property>
+        <property name="brand_info" type="java.lang.String">
+            <column name="brand_info"/>
+        </property>
+        <property name="input_info" type="java.lang.String">
+            <column name="input_info"/>
+        </property>
+        <property name="encode_info" type="java.lang.String">
+            <column name="encode_info"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.mchant.po.FndCitys" table="fnd_citys" >
+        <id name="city_id" type="java.lang.Integer">
+            <column name="city_id" />
+            <generator class="identity" />
+        </id>
+        <property name="province_id" type="java.lang.Integer">
+            <column name="province_id"/>
+        </property>
+        <property name="city_name" type="java.lang.String">
+            <column name="city_name"/>
+        </property>
+        <property name="city_py" type="java.lang.String">
+            <column name="city_py"/>
+        </property>
+        <property name="first_letter" type="java.lang.String">
+            <column name="first_letter"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.business.po.OnBankCardVerifi" table="on_bank_card_verifi" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+        <property name="cardNumber" type="java.lang.String">
+            <column name="card_number"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

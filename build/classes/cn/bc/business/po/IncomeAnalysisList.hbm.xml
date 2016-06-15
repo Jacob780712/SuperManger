@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.business.po.IncomeAnalysisList" table="income_analysis_list" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mch_name" type="java.lang.String">
+            <column name="mch_name"/>
+        </property>
+        <property name="mch_number" type="java.lang.String">
+            <column name="mch_number"/>
+        </property>
+        <property name="ck_name" type="java.lang.String">
+            <column name="ck_name"/>
+        </property>
+        <property name="ck_id" type="java.lang.String">
+            <column name="ck_id"/>
+        </property>
+         <property name="ck_quota" type="java.lang.Integer">
+            <column name="ck_quota"/>
+        </property>
+        <property name="sales_amount" type="java.lang.Integer">
+            <column name="sales_amount"/>
+        </property>
+        <property name="ck_count" type="java.lang.String">
+            <column name="ck_count"/>
+        </property>
+        <property name="shouyi" type="java.lang.String">
+            <column name="shouyi"/>
+        </property>
+        <property name="zhouqi" type="java.lang.String">
+            <column name="zhouqi"/>
+        </property>
+        <property name="yuehua" type="java.lang.String">
+            <column name="yuehua" />
+        </property>
+        <property name="nianhua" type="java.lang.String">
+            <column name="nianhua"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

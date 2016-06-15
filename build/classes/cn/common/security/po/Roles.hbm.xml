@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.common.security.po">
+	<class name="Roles" table="sec_roles" dynamic-update="true" dynamic-insert="true">
+	    <cache usage="read-write" />
+		<id name="roleId" type="java.lang.Integer"  column="id">
+			 <generator class="increment" />
+		</id>
+		
+		<property name="name" type="java.lang.String" column="name" length="50" />
+		<property name="remark" type="java.lang.String" column="remark" length="255" />
+		<property name="isDefined" type="java.lang.Integer" column="is_defined"  />
+		
+	</class>
+</hibernate-mapping>

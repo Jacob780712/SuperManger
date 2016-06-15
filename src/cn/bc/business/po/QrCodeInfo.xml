@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.business.po.QrCodeInfo" table="qr_code_info" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="qrChannelName" type="java.lang.String">
+            <column name="qr_channel_name"/>
+        </property>
+        <property name="qrPicUrl" type="java.lang.String">
+            <column name="qr_pic_url"/>
+        </property>
+        <property name="qrTicket" type="java.lang.String">
+            <column name="qr_ticket"/>
+        </property>
+        <property name="qrStatus" type="java.lang.String">
+            <column name="qr_status"/>
+        </property>
+        <property name="qrRemark" type="java.lang.String">
+            <column name="qr_remark"/>
+        </property>
+        <property name="qrCreateDate" type="java.util.Date">
+            <column name="qr_create_date"/>
+        </property>
+        <property name="qrCreatePerson" type="java.lang.String">
+            <column name="qr_create_person"/>
+        </property>
+        <property name="qrUpdateDate" type="java.util.Date">
+            <column name="qr_update_date" />
+        </property>
+        <property name="qrUpdatePerson" type="java.lang.String">
+            <column name="qr_update_person"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.query.po.CoAccount" table="co_account" >
+        <id name="co_id" type="java.lang.Integer">
+            <column name="co_id" />
+            <generator class="identity" />
+        </id>
+        <property name="co_name" type="java.lang.String">
+            <column name="co_name"/>
+        </property>
+        <property name="co_tel" type="java.lang.String">
+            <column name="co_tel"/>
+        </property>
+        <property name="account_balance" type="java.lang.Integer">
+            <column name="account_balance"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+    </class>
+</hibernate-mapping>

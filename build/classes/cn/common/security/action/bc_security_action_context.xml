@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 登录 -->
+    
+	<bean id="loginAction" class="cn.common.security.action.LoginAction" scope="prototype">
+		<property name="userService">
+			<ref bean="commonSecurityService.userService" />
+		</property>
+		<property name="menuService">
+			<ref bean="commonSecurityService.menuService" />
+		</property>
+		<property name="authService">
+			<ref bean="commonSecurityService.authService" />
+		</property>
+		<property name="roleAuthService">
+			<ref bean="commonSecurityService.roleAuthService" />
+		</property>
+		<property name="objectPrivilegeService">
+			<ref bean="commonSecurityService.objectPrivilegeService" />
+		</property>
+		<property name="moduGroupService">
+			<ref bean="commonSecurityService.moduGroupService" />
+		</property>
+		<property name="roleService">
+			<ref bean="commonSecurityService.roleService" />
+		</property>
+		
+		
+	</bean>
+	<!-- 修改密码 -->
+	<bean id="passWordMgtAction" class="cn.common.security.action.PassWordMgtAction" scope="prototype">
+		<property name="userService">
+			<ref bean="commonSecurityService.userService" />
+		</property>
+	</bean>
+	<!-- 用户登出 -->
+	<bean id="logOutAction" class="cn.common.security.action.LogOutAction" scope="prototype">
+	</bean>
+	<!-- 用户信息列表 -->
+	<bean id="listUserAction" class="cn.common.security.action.ListUserAction" scope="prototype">
+		<property name="userService">
+			<ref bean="commonSecurityService.userService" />
+		</property>
+	</bean>
+	<!-- 用户信息管理 -->
+	<bean id="userMgtAction" class="cn.common.security.action.UserMgtAction" scope="prototype"> 
+		<property name="userService">
+			<ref bean="commonSecurityService.userService" />
+		</property>
+		<property name="roleService">
+			<ref bean="commonSecurityService.roleService" />
+		</property>
+		<property name="userRoleService">
+			<ref bean="commonSecurityService.userRoleService" />
+		</property>
+		<property name="defautRoldId"  value="2" />
+		<property name="objectPrivilegeService">
+			<ref bean="commonSecurityService.objectPrivilegeService"/>
+		</property>
+	</bean>
+	
+	<!-- 角色信息管理 -->
+	<bean id="roleMgtAction" class="cn.common.security.action.RoleMgtAction" scope="prototype">
+		<property name="roleService">
+			<ref bean="commonSecurityService.roleService" />
+		</property>
+		<property name="roleAuthService">
+			<ref bean="commonSecurityService.roleAuthService" />
+		</property>
+		<property name="authService">
+			<ref bean="commonSecurityService.authService" />
+		</property>
+		<property name="moduService">
+			<ref bean="commonSecurityService.moduService" />
+		</property>
+		<property name="moduGroupService">
+			<ref bean="commonSecurityService.moduGroupService" />
+		</property>
+	</bean>
+	<!-- 角色信息列表 -->
+	<bean id="listRoleAction" class="cn.common.security.action.ListRoleAction" scope="prototype">
+		<property name="roleService">
+			<ref bean="commonSecurityService.roleService" />
+		</property>
+		<property name="userRoleService">
+			<ref bean="commonSecurityService.userRoleService" />
+		</property>
+	</bean>
+
+	<!-- 权限管理拦截器 -->
+	<bean id="privilegesIterceptor"
+	 class="cn.common.security.interceptor.PrivilegesIterceptor">
+		<!-- 权限白名单： 在白名单中的Action不受权限拦截器限制 -->
+		<property name="whitePrivileges"  >
+			 <list>
+                <value>/admin/loginAction.jhtml</value>
+                <value>/admin/logOutAction!logOut.jhtml</value>
+                <value>/admin/keepSessionAction.jhtml</value>
+                <value>/admin/userMgtAction!ajaxValidateLoignid.jhtml</value>
+                <value>/admin/tailFileAction.jhtml</value>
+            </list>
+		</property>
+		 <property name="userAuthService">
+	        <ref bean="commonSecurityService.userAuthService"/>
+	    </property>
+	</bean>
+
+	<!-- 权限信息管理 -->
+	<bean id="authMgtAction" class="cn.common.security.action.AuthMgtAction" scope="prototype">
+	    <property name="authService">
+	        <ref bean="commonSecurityService.authService"/>
+	    </property>
+	    	    
+	    <property name="moduService">
+	        <ref bean="commonSecurityService.moduService"/>
+	    </property>
+	    
+	    <property name="menuService">
+			<ref bean="commonSecurityService.menuService" />
+		</property>	   
+	</bean>
+	<!-- 权限信息列表 -->
+	<bean id="listAuthAction" class="cn.common.security.action.ListAuthAction" scope="prototype">
+	    <property name="authService">
+	        <ref bean="commonSecurityService.authService"/>
+	    </property>
+	</bean>
+	<!-- 模块信息管理 -->
+	<bean id="moduMgtAction" class="cn.common.security.action.ModuMgtAction" scope="prototype">
+	    <property name="moduService">
+	        <ref bean="commonSecurityService.moduService"/>
+	    </property>
+	     <property name="moduGroupService">
+	        <ref bean="commonSecurityService.moduGroupService"/>
+	    </property>
+	</bean>
+	<!-- 模块信息列表 -->
+	<bean id="listModuAction" class="cn.common.security.action.ListModuAction" scope="prototype">
+	    <property name="moduService">
+	        <ref bean="commonSecurityService.moduService"/>
+	    </property>
+	</bean>
+	<!-- 菜单信息管理 -->
+	<bean id="menuMgtAction" class="cn.common.security.action.MenuMgtAction" scope="prototype">
+	    <property name="menuService">
+			<ref bean="commonSecurityService.menuService" />
+		</property>
+	</bean>
+	<!-- 菜单信息列表 -->
+	<bean id="listMenuAction" class="cn.common.security.action.ListMenuActions" scope="prototype">
+	    <property name="menuService">
+			<ref bean="commonSecurityService.menuService" />
+		</property>
+	</bean>
+	<!-- 权限管理 -->
+	<bean id="objectPrivilegeMgmtAction" class="cn.common.security.action.ObjectPrivilegeMgmtAction" scope="prototype">
+	    <property name="objectPrivilegeService">
+			<ref bean="commonSecurityService.objectPrivilegeService" />
+		</property>
+	    <property name="userService">
+			<ref bean="commonSecurityService.userService" />
+		</property>
+	    <property name="objectPrivilegeDiplayPreProcessor">
+			<ref bean="commonSecurityService.objectPrivilegeDiplayPreProcessor" />
+		</property>				
+	</bean>
+	<!-- 模块组信息管理 -->
+	<bean id="moduGroupMgtAction"
+		class="cn.common.security.action.ModuGroupMgtAction" scope="prototype">
+		<property name="moduGroupService">
+			<ref bean="commonSecurityService.moduGroupService" />
+		</property>
+	</bean>
+	<!-- 模块组信息列表 -->
+	<bean id="listModuGroupAction"
+		class="cn.common.security.action.ListModuGroupAction" scope="prototype">
+		<property name="moduGroupService">
+			<ref bean="commonSecurityService.moduGroupService" />
+		</property>
+	</bean>
+	
+	<bean id="tailFileAction" class="cn.common.security.action.TailFileAction" scope="prototype">
+		<property name="appProfileOptionService" ref="commonSecurityService.appProfileOptionService"></property>
+		<property name="fileDao" ref="commons.fileDao"></property>
+	</bean>	
+	
+	<bean id="appProfileOptionMgmtAction" class="cn.common.security.action.AppProfileOptionMgmtAction" scope="prototype">
+		<property name="appProfileOptionService">
+			<ref bean="commonSecurityService.appProfileOptionService" />
+		</property>
+	</bean>	
+	<bean id="keepSessionAction" class="cn.common.security.action.KeepSessionAction" scope="prototype"></bean>
+</beans>

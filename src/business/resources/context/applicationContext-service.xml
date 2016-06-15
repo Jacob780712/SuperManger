@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+   <import resource="classpath:business/resources/context/applicationContext.xml"/>
+   <import resource="classpath:business/resources/context/applicationContext-db.xml"/>
+   <import resource="classpath:business/resources/context/applicationContext-db-transaction.xml"/>
+   <!-- security -->
+   <import resource="classpath:cn/common/security/dao/common_security_dao_context.xml"/>
+   <import resource="classpath:cn/common/security/service/common_security_service_context.xml"/>
+   <import resource="classpath:cn/common/security/action/bc_security_action_context.xml"/>
+   <!-- mchant -->
+   <import resource="classpath:cn/context/mchant/mchant_action_context.xml"/>
+   <import resource="classpath:cn/context/mchant/mchant_dao_context.xml"/>
+   <import resource="classpath:cn/context/mchant/mchant_service_context.xml"/>
+   
+   <!-- business -->
+   <import resource="classpath:cn/context/business/business_action_context.xml"/>
+   <import resource="classpath:cn/context/business/business_dao_context.xml"/>
+   <import resource="classpath:cn/context/business/business_service_context.xml"/>
+   
+   <!-- query -->
+   <import resource="classpath:cn/context/query/query_action_context.xml"/>
+   <import resource="classpath:cn/context/query/query_dao_context.xml"/>
+   <import resource="classpath:cn/context/query/query_service_context.xml"/>
+   <!-- settlement -->
+   <import resource="classpath:cn/context/settlement/settlement_action_context.xml"/>
+   <import resource="classpath:cn/context/settlement/settlement_dao_context.xml"/>
+   <import resource="classpath:cn/context/settlement/settlement_service_context.xml"/>
+   <!-- tasking -->
+   <import resource="classpath:cn/context/tasking/tasking.xml"/>
+   <import resource="classpath:cn/context/tasking/task_service_context.xml"/>
+   <import resource="classpath:cn/context/tasking/task_dao_context.xml"/>
+</beans>

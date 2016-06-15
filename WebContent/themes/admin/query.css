@@ -1,0 +1,20 @@
+/* A CSS Framework of queryTrade */
+
+
+td{
+   font-family:"����","serif";
+   font-size:9pt
+}
+ 
+.tds{
+   height:20px;
+   text-align:center;
+   background-color:#FFFFFF;
+}
+
+.trs{
+   text-align:center;
+   height:30px;
+   background-color:#B9D3EE
+}  
+		

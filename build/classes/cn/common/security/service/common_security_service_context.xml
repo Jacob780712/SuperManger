@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<bean id="commonSecurityService.moduGroupService" class="cn.common.security.service.impl.ModuGroupServiceImpl">
+		<property name="moduGroupDao">
+			<ref bean="commonSecurityDao.moduGroupDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.authService" class="cn.common.security.service.impl.AuthServiceImpl">
+		<property name="authDao">
+			<ref bean="commonSecurityDao.authDao" />
+		</property>
+		<property name="roleAuthDao">
+			<ref bean="commonSecurityDao.roleAuthDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.menuService" class="cn.common.security.service.impl.MenuServiceImpl">
+		<property name="menuDao">
+			<ref bean="commonSecurityDao.menuDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.moduService" class="cn.common.security.service.impl.ModuServiceImpl">
+		<property name="moduDao">
+			<ref bean="commonSecurityDao.moduDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.roleService" class="cn.common.security.service.impl.RoleServiceImpl">
+		<property name="roleDao">
+			<ref bean="commonSecurityDao.roleDao" />
+		</property>
+		<property name="roleAuthDao">
+			<ref bean="commonSecurityDao.roleAuthDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.userService" class="cn.common.security.service.impl.UserServiceImpl">
+		<property name="userDao">
+			<ref bean="commonSecurityDao.userDao" />
+		</property>
+		<property name="userRoleDao">
+			<ref bean="commonSecurityDao.userRoleDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.roleAuthService" class="cn.common.security.service.impl.RoleAuthServiceImpl">
+		<property name="roleAuthDao">
+			<ref bean="commonSecurityDao.roleAuthDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.userRoleService" class="cn.common.security.service.impl.UserRoleServiceImpl">
+		<property name="userRoleDao">
+			<ref bean="commonSecurityDao.userRoleDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.userAuthService" class="cn.common.security.service.impl.UserAuthServiceImpl">
+		<property name="userRoleDao">
+			<ref bean="commonSecurityDao.userRoleDao" />
+		</property>
+		<property name="roleAuthDao">
+			<ref bean="commonSecurityDao.roleAuthDao" />
+		</property>
+	</bean>
+	<bean id="commonSecurityService.objectPrivilegeService" class="cn.common.security.service.impl.ObjectPrivilegeServiceImpl">
+		<property name="objectPrivilegeDao">
+			<ref bean="commonSecurityDao.objectPrivilegeDao"/>
+		</property>
+		<property name="objectPrivilegeOptionDao">
+			<ref bean="commonSecurityDao.objectPrivilegeOptionDao"/>
+		</property>
+	</bean>	
+	
+	<bean id="commonSecurityService.objectPrivilegeDiplayPreProcessor" class="cn.common.security.action.impl.ObjectPrivilegeDiplayPreProcessorImpl">
+		<property name="objectPrivilegeDiplayPreProcessors">
+			<list>
+				<ref bean="commonSecurityService.objectPrivilegeDiplayPreProcessorModuGroup"/>
+				<ref bean="commonSecurityService.objectPrivilegeDiplayPreProcessorUserRole"/>
+			</list>
+		</property>		
+	</bean>
+	<bean id="commonSecurityService.objectPrivilegeDiplayPreProcessorModuGroup" class="cn.common.security.action.impl.ObjectPrivilegeDiplayPreProcessorModuGroupImpl">
+		<property name="moduGroupService">
+			<ref bean="commonSecurityService.moduGroupService"/>
+		</property>
+	</bean>
+	<bean id="commonSecurityService.objectPrivilegeDiplayPreProcessorUserRole" class="cn.common.security.action.impl.ObjectPrivilegeDiplayPreProcessorUserRoleImpl">
+		<property name="objectPrivilegeService">
+			<ref bean="commonSecurityService.objectPrivilegeService"/>
+		</property>
+		<property name="roleService" ref="commonSecurityService.roleService"></property>
+		<property name="userService" ref="commonSecurityService.userService"></property>
+	</bean>
+	<bean id="commonSecurityService.appProfileOptionService" class="cn.common.security.service.impl.AppProfileOptionServiceImpl">
+		<property name="appProfileOptionDao">
+			<ref bean="commonSecurityDao.appProfileOptionDao" />
+		</property>
+	</bean>	
+</beans>

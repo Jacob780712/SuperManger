@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	<bean id="businessAction" class="cn.bc.business.action.BusinessAction" scope="prototype">
+	    <property name="bser">
+			<ref bean="BusinessServices" />
+		</property>
+	</bean>
+	
+	<bean id="messageLogsAction" class="cn.bc.business.action.MessageLogsAction" scope="prototype">
+	    <property name="messageLogsService">
+			<ref bean="messageLogsService" />
+		</property>
+	</bean>
+	<bean id="cashOutAction" class="cn.bc.business.action.CashAction" scope="prototype">
+	    <property name="cashSer">
+			<ref bean="cashService" />
+		</property>
+		<property name="messageLogsService">
+			<ref bean="messageLogsService" />
+		</property>
+	</bean>
+	<bean id="cashOutImportAction" class="cn.bc.business.action.CashOutImportAction" scope="prototype">
+	    <property name="cashSer">
+			<ref bean="cashService" />
+		</property>
+		<property name="messageLogsService">
+			<ref bean="messageLogsService" />
+		</property>
+	</bean>
+	<bean id="qrCodeAction" class="cn.bc.business.action.QrCodeAction" scope="prototype">
+		<property name="qcService">
+			<ref bean="qrCodeService" />
+		</property>
+	</bean>
+</beans>

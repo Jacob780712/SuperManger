@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+
+	<package name="mchant" namespace="/admin"  extends="default">
+	 <default-interceptor-ref name="myInterceptors" />
+	 <!-- 用户信息列表 -->
+	
+	 <action name="mchant_list" class="mchantAction" method="mchList">
+	 	<result name="success">mchant/mchant_list.jsp</result>
+	 </action>
+	<action name="addmchant" class="mchantAction" method="addmchant">
+	 	<result name="success">mchant/mchant_add.jsp</result>
+	 </action>
+	 <action name="savemchant" class="mchantAction" method="savemchant">
+	 	<result name="success">mchant/mchant_card_add.jsp</result>
+	 </action>
+	 <action name="addStore" class="mchantAction" method="addStore">
+	 	<result name="success">mchant/mchant_store_add.jsp</result>
+	 </action>
+	 <action name="storeDetail" class="mchantAction" method="storeDetail">
+	 	<result name="success">mchant/mchant_store_detail.jsp</result>
+	 </action>
+	 <action name="storeDelete" class="mchantAction" method="storeDelete">
+	 </action>
+	 <action name="savemchantStore" class="mchantAction" method="savemchantStore">
+	 </action>
+	 <action name="savemchantCard" class="mchantAction" method="savemchantCard">
+	  	<result name="success">mchant/mchant_back_allot_add.jsp</result>
+	 </action>
+	 <action name="savemchantbackAllot" class="mchantAction" method="savemchantbackAllot">
+	  	<result name="success">mchant/mchant_stm_config_add.jsp</result>
+	 </action>
+	 <action name="savemchantStmConfig" class="mchantAction" method="savemchantStmConfig">
+	  	<result name="success">mchant/mchant_update_status.jsp</result>
+	 </action>
+  	 <action name="updateMchantStatus" class="mchantAction" method="updateMchantStatus">
+	 </action>
+	 <action name="mchantDel" class="mchantAction" method="mchantDel">
+	 </action>
+	 <action name="mchantDetail" class="mchantAction" method="mchantDetail">
+	 	<result name="success">mchant/mchant_detail.jsp</result>
+	 </action>
+	 <action name="mchantStoreDetail" class="mchantAction" method="mchantStoreDetail">
+	 	<result name="success">mchant/mchant_store_list.jsp</result>
+	 </action>
+	 <action name="mchantSeepic" class="mchantAction" method="mchantSeepic">
+	 	<result name="success">mchant/mchant_see_pic.jsp</result>
+	 </action>
+	 <action name="mchOpenPuerDetail" class="mchantAction" method="mchOpenPuerDetail">
+	 	<result name="success">mchant/mchant_open_puer.jsp</result>
+	 </action>
+	 <action name="mchantRepay" class="mchantAction" method="mchantRepay">
+	 </action>
+	 <action name="mchantUpdate" class="mchantUpdateAction" method="mchantUpdate">
+	 	<result name="success">mchant/mchant_update.jsp</result>
+	 </action>
+	 <action name="updateStoreAccountStatus" class="mchantUpdateAction" method="updateStoreAccountStatus">
+	 </action>
+	 <action name="excuteMchantUpdate" class="mchantUpdateAction" method="excuteMchantUpdate">
+	 </action>
+	 <action name="updateMchAccountStatus" class="mchantUpdateAction" method="updateMchAccountStatus">
+	 </action>
+	 <action name="storeUpdate" class="mchantUpdateAction" method="storeUpdate">
+	 	<result name="success">mchant/mchant_store_update.jsp</result>
+	 </action>
+	 <action name="excuteStoreUpdate" class="mchantUpdateAction" method="excuteStoreUpdate">
+	 </action>
+	 <action name="deleteStore" class="mchantUpdateAction" method="deleteStore">
+	 </action>
+	  <action name="accountUpdate" class="mchantUpdateAction" method="accountUpdate">
+	 	<result name="success">mchant/mchant_account_update.jsp</result>
+	 </action>
+	 <action name="excuteAccountUpdate" class="mchantUpdateAction" method="excuteAccountUpdate">
+	 </action>
+	 <action name="cardUpdate" class="mchantUpdateAction" method="cardUpdate">
+	 	<result name="success">mchant/mchant_card_update.jsp</result>
+	 </action>
+	 <action name="excuteCardUpdate" class="mchantUpdateAction" method="excuteCardUpdate">
+	 </action>
+	 <action name="allotUpdate" class="mchantUpdateAction" method="allotUpdate">
+	 	<result name="success">mchant/mchant_back_allot_update.jsp</result>
+	 </action>
+	 <action name="excuteAllotUpdate" class="mchantUpdateAction" method="excuteAllotUpdate">
+	 </action>
+	 <action name="astmConfigUpdate" class="mchantUpdateAction" method="astmConfigUpdate">
+	 	<result name="success">mchant/mchant_stm_config_update.jsp</result>
+	 </action>
+	 <action name="excuteAstmConfigUpdate" class="mchantUpdateAction" method="excuteAstmConfigUpdate">
+	 </action>
+	 <action name="mchantBrandList" class="mchantAction" method="mchantBrandList">
+	 	<result name="success">mchant/mchant_brand_list.jsp</result>
+	 </action>
+	 <action name="addBrand" class="mchantAction" method="addBrand">
+	 	<result name="success">mchant/mchant_brand_add.jsp</result>
+	 </action>
+	 <action name="addBrandCommit" class="mchantAction" method="addBrandCommit">
+	 </action>
+	 <action name="delBrand" class="mchantAction" method="delBrand">
+	 </action>
+	 <action name="brandDetail" class="mchantAction" method="brandDetail">
+	 	<result name="success">mchant/mchant_brand_detail.jsp</result>
+	 </action>
+	 <!-- 到店礼遇 -->
+	 <action name="membershipList" class="mchMemberAction" method="membershipList">
+	 	<result name="success">mchant/member_ship_list.jsp</result>
+	 </action>
+	 <action name="addGoods" class="mchMemberAction" method="addGoods">
+	 	<result name="success">mchant/member_ship_add.jsp</result>
+	 </action>
+	 <action name="addGoodsSubmit" class="mchMemberAction" method="addGoodsSubmit">
+	 </action>
+	 <action name="detailMembership" class="mchMemberAction" method="detailMembership">
+	  	<result name="success">mchant/member_ship_detail.jsp</result>
+	 </action>
+	 <action name="delMembership" class="mchMemberAction" method="delMembership">
+	 </action>
+	 <action name="updateMembership" class="mchMemberUpdateAction" method="updateMembership">
+	 	<result name="success">mchant/member_ship_update.jsp</result>
+	 </action>
+	 <action name="updateMembershipSubmit" class="mchMemberUpdateAction" method="updateMembershipSubmit">
+	 </action>
+	 <action name="mchantShipList" class="mchMemberAction" method="mchantShipList">
+	 	<result name="success">mchant/member_ship_mchant.jsp</result>
+	 </action>
+	 <action name="membershipUpdate" class="mchMemberUpdateAction" method="membershipUpdate">
+	 	<result name="success">mchant/member_ship_mchant_update.jsp</result>
+	 </action>
+	 <action name="membershipUpdateCommit" class="mchMemberUpdateAction" method="membershipUpdateCommit">
+	 </action>
+	 <action name="cityList" class="mchantAction" method="cityList">
+	 	<result name="success">mchant/mchant_city_list.jsp</result>
+	 </action>
+	 <action name="changeCity" class="mchantAction" method="changeCity">
+	 </action>
+	</package>
+</struts>

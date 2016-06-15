@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.business.po.MchValueSummary" table="mch_value_summary" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mch_number" type="java.lang.String">
+            <column name="mch_number"/>
+        </property>
+        <property name="mch_name" type="java.lang.String">
+            <column name="mch_name"/>
+        </property>
+        <property name="kedan" type="java.lang.String">
+            <column name="kedan"/>
+        </property>
+        <property name="ridan" type="java.lang.String">
+            <column name="ridan"/>
+        </property>
+         <property name="yueliu" type="java.lang.String">
+            <column name="yueliu"/>
+        </property>
+        <property name="bussiness_amount" type="java.lang.String">
+            <column name="bussiness_amount"/>
+        </property>
+        <property name="card_number" type="java.lang.String">
+            <column name="card_number"/>
+        </property>
+        <property name="ck_quota" type="java.lang.String">
+            <column name="ck_quota"/>
+        </property>
+        <property name="sales_amount" type="java.lang.String">
+            <column name="sales_amount"/>
+        </property>
+        <property name="available_card_number" type="java.lang.String">
+            <column name="available_card_number" />
+        </property>
+        <property name="card_balance" type="java.lang.String">
+            <column name="card_balance"/>
+        </property>
+        <property name="back_amount" type="java.lang.String">
+            <column name="back_amount"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

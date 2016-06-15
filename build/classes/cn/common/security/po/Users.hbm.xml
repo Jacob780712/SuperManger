@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.common.security.po">
+	<class name="Users" table="sec_users" dynamic-update="true" dynamic-insert="true">
+	    <id name="userId" type="java.lang.Integer"  column="id">
+			 <generator class="increment" />
+		</id>
+		<property name="loginid" type="java.lang.String" column="loginid" length="50" />
+		<property name="password" type="java.lang.String" column="password" length="32" />
+		<property name="name" type="java.lang.String" column="name" length="50" />
+		<property name="email" type="java.lang.String" column="email" length="50" />
+		<property name="status" type="java.lang.Integer" column="status"/>
+		<property name="remark" type="java.lang.String" column="remark" length="255" />
+		<property name="mobile" type="java.lang.String" column="mobile"  />
+		<property name="bindIP" type="java.lang.String" column="bind_ip"  />
+		
+		<property name="loginTimes" type="java.lang.Integer" column="login_times"  />
+		<property name="latestAccessIp" type="java.lang.String" column="last_access_ip" length="50" />
+		<property name="latestAccessTime" type="java.util.Date" column="last_access_time"  />
+		<property name="userType" type="java.lang.Integer" column="user_type"></property>
+		
+	    <property name="expireLimitFlag" column="expire_limit_flag"/>
+	    <property name="expireDate" type="java.util.Date" column="expire_date"/>
+	    <property name="ipLimitFlag" column="ip_limit_flag"/>
+	    <property name="ipEnable" column="ip_enable"/>
+	    <property name="createBy" column="create_by" type="java.lang.Integer"></property>
+	    <property name="createDate" column="create_date" type="java.util.Date" update="false"></property>
+	</class>
+</hibernate-mapping>

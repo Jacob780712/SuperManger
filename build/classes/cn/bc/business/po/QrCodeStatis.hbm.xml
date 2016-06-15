@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.business.po.QrCodeStatis" table="stm_qr_code" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="followeeNum" type="java.lang.Integer">
+            <column name="followee_num"/>
+        </property>
+        <property name="channelName" type="java.lang.String">
+            <column name="channel_name"/>
+        </property>
+        <property name="registerNum" type="java.lang.Integer">
+            <column name="register_num"/>
+        </property>
+        <property name="firstPayBillNum" type="java.lang.Integer">
+            <column name="first_pay_bill_num"/>
+        </property>
+        <property name="buyCardNum" type="java.lang.Integer">
+            <column name="buy_card_num"/>
+        </property>
+         <property name="unfolloweeNum" type="java.lang.Integer">
+            <column name="unfollowee_num"/>
+        </property>
+        <property name="stmDate" type="java.util.Date">
+            <column name="stm_date"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+    </class>
+</hibernate-mapping>

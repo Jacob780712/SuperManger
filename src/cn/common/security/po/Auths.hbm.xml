@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.common.security.po">
+	<class name="Auths" table="sec_auths" dynamic-update="true" dynamic-insert="true">
+	    <cache usage="read-write" />
+		<id name="authId" type="java.lang.Integer"  column="ID">
+			 <generator class="increment" />
+		</id>
+		
+		<property name="authName" type="java.lang.String" column="NAME" length="50" />
+		<property name="objectName" type="java.lang.String" column="OBJECT_NAME" length="50" />
+		<property name="methodName" type="java.lang.String" column="METHOD_NAME" length="50"  />
+		<property name="remark" type="java.lang.String" column="REMARK"  length="200" />
+		<property name="url" column="url"></property>
+		<property name="menuId" column="MENU_ID" type="java.lang.Integer"></property>
+		<property name="moduId" column="modu_id" type="java.lang.Integer"></property>
+		<property name="moduName" formula="(select a.name from sec_modus a where a.id=modu_id)"></property>
+		<property name="menuName" formula="(select a.name from sec_menus a where a.id=menu_id)"></property>
+	</class>
+</hibernate-mapping>

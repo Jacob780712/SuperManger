@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.settlement.po.StmMerchant" table="stm_merchant" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="date" type="java.util.Date">
+            <column name="date"/>
+        </property>
+        <property name="mch_number" type="java.lang.String">
+            <column name="mch_number"/>
+        </property>
+        <property name="mch_name" type="java.lang.String" formula="(select c.mch_name from mch_merchant c where c.mch_number=mch_number)"></property>
+        <property name="sale_card_number" type="java.lang.String">
+            <column name="sale_card_number"/>
+        </property>
+        <property name="sale_card_amount" type="java.lang.Integer">
+            <column name="sale_card_amount"/>
+        </property>
+        <property name="sale_card_fee" type="java.lang.Integer">
+            <column name="sale_card_fee"/>
+        </property>
+        <property name="settlement_amount" type="java.lang.Integer">
+            <column name="settlement_amount"/>
+        </property>
+        <property name="batch_number" type="java.lang.String">
+            <column name="batch_number"/>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+    </class>
+</hibernate-mapping>

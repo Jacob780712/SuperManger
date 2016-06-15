@@ -1,0 +1,169 @@
+@charset "utf-8";
+#header #rc {
+	height:39px;
+	width:13px;
+	float:left;
+}
+#header #logo {
+	float:left;
+}
+#header .fenge {
+	width:1px;
+	float:left;
+}
+#header .anniu {
+	float:left;
+}
+#header .anniuyh {
+	width:112px;
+	height:39px;
+	float:left;
+}
+#header .anniuyh a{ 
+display:block;
+width:112px;
+height:39px;
+background-image:url(../images/daohang_08.jpg);
+}
+#header .anniuyh a:hover {
+	background-image:url(../images/daohanghg_08.jpg);
+}
+
+#header .anniuzx {
+	width:112px;
+	height:39px;
+	float:left;
+	}
+#header .anniuzx a{ 
+display:block;
+width:112px;
+height:39px;
+background-image:url(../images/daohang_10.jpg);
+}
+#header .anniuzx a:hover {
+	background-image:url(../images/daohanghg_10.jpg);
+}
+
+#header .anniuhz {
+	width:112px;
+	height:39px;
+	float:left;
+}
+#header .anniuhz a{ 
+display:block;
+width:112px;
+height:39px;
+background-image:url(../images/daohang_12.jpg);
+}
+#header .anniuhz a:hover {
+	background-image:url(../images/daohanghg_12.jpg);
+}
+
+#header .anniuqy {
+	width:112px;
+	height:39px;
+	float:left;
+}
+#header .anniuqy a{ 
+display:block;
+width:112px;
+height:39px;
+background-image:url(../images/daohang_14.jpg);
+}
+#header .anniuqy a:hover {
+	background-image:url(../images/daohanghg_14.jpg);
+}
+
+#header .anniupp {
+	width:112px;
+	height:39px;
+	float:left;
+}
+#header .anniupp a{ 
+display:block;
+width:112px;
+height:39px;
+background-image:url(../images/daohang_16.jpg);
+}
+#header .anniupp a:hover {
+	background-image:url(../images/daohanghg_16.jpg);
+}
+
+
+
+#header #search1 {
+	float:right;
+	height:39px;
+	width:8px;
+}
+#header #search #hw {
+	font-size:12px;
+	width:100px;
+	background-color:#FFFFFF;
+	border:0px;
+	border-color:#FFFFFF;
+	float:left;
+	margin-top:14px;
+	margin-left:3px;
+}
+#header #search #wz {
+	height:12px;
+	float:left;
+	width:11px;
+	margin-top:14px;
+	margin-left:7px;
+}
+<!--
+#header .anniu #nav {
+	float:left;
+}
+#header .anniu #nav a {
+	display:block;
+	text-align:center;
+}
+#header .anniu #nav li {
+	float:left;
+	width:auto;
+	list-style-type:none;
+}
+#header .anniu #nav li ul {
+	line-height:30px;
+	list-style-type:none;
+	text-align:left;
+	left:-999em;
+	width:50px;
+	position:absolute;
+}
+#header .anniu #nav li ul li {
+	float:left;
+	background:#F6f6f6;
+}
+#header .anniu #nav li ul a {
+	width:80px;
+	text-align:left;
+	padding-left:26px;
+}
+#header .anniu #nav li ul a:link {
+	color:#666;
+	text-decoration:none;
+}
+#header .anniu #nav li ul a:visited {
+	color:#666;
+	text-decoration:none;
+}
+#header .anniu #nav li ul a:hover {
+	color:#F3F3F3;
+	text-decoration:none;
+	font-weight:normal;
+	background:#666666;
+}
+#header .anniu #nav li:hover ul {
+	left: auto;
+}
+#header .anniu #nav li.sfhover ul {
+	left: auto;
+}
+#header .anniu #content {
+	clear: left;
+}
+-->

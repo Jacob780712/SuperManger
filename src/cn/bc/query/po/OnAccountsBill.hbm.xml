@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.query.po.OnAccountsBill" table="on_accounts_bill" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="accounts_id" type="java.lang.Integer">
+            <column name="accounts_id"/>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount"/>
+        </property>
+        <property name="accounts_balance" type="java.lang.Integer">
+            <column name="accounts_balance"/>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type"/>
+        </property>
+        <property name="source_id" type="java.lang.String">
+            <column name="source_id"/>
+        </property>
+        <property name="order_number" type="java.lang.String">
+            <column name="order_number"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+          <property name="mobile" type="java.lang.String" formula="(
+          select user.mobile_phone from on_users user where user.user_id=
+          	(select s.user_id from on_accounts s where s.accounts_id=accounts_id))">
+        </property>
+        
+    </class>
+</hibernate-mapping>

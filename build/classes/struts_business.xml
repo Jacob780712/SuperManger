@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+
+	<package name="business" namespace="/admin"  extends="default">
+	    <default-interceptor-ref name="myInterceptors" />
+		<action name="messageLogs" class="messageLogsAction" method="messageLogList">
+			<result name="success">/admin/business/mesage/notice_message_logs.jsp</result>  
+	    </action>
+	    <action name="gotomessageSend" class="messageLogsAction" method="gotoSend">
+		    <result name="success">/admin/business/mesage/notice_message_send.jsp</result>
+	    </action>
+	    <action name="messageSend" class="messageLogsAction" method="sendmsg">
+	    </action>
+	    <!-- 提现 -->
+	    <action name="cashOutList" class="cashOutAction" method="cashOutList">
+	 		<result name="success">business/cashOut/cashOut_list.jsp</result>
+	 	</action>
+	 	<action name="cashOutReject" class="cashOutAction" method="cashOutReject">
+	 	</action>
+	 	<action name="cashOutExport" class="cashOutAction" method="cashOutExport">
+	 	</action>
+	 	<action name="importExl" class="cashOutAction" method="importExl">
+	 		<result name="success">business/cashOut/import_cash_result.jsp</result> 
+	 	</action>
+	 	<action name="listToAllImport" class="cashOutImportAction" method="listToAllImport">
+	 		<result name="success">business/cashOut/cashOut_list_finish.jsp</result> 
+	 	</action>
+	 	<!-- 提现统计 -->
+	 	<action name="cashOutStatis" class="cashOutAction" method="cashOutStatis">
+	 		<result name="success">business/cashOut/cashOut_statis_list.jsp</result>
+	 	</action>
+	 	<!-- 银行卡列表（新增的银行卡并且没有做过提现） -->
+	 	<action name="listBankCard" class="cashOutAction" method="listBankCard">
+	 		<result name="success">business/cashOut/bank_list_notcash.jsp</result>
+	 	</action>
+	 	<action name="rejectBank" class="cashOutAction" method="rejectBank">
+	 	</action>
+	 	<action name="exportVerification" class="cashOutAction" method="exportVerification">
+	 	</action>
+	 	<action name="importVerfiBankCardList" class="cashOutAction" method="importVerfiBankCardList">
+	 		<result name="success">business/cashOut/bank_list_import.jsp</result>
+	 	</action>
+	 	<action name="importVerfiData" class="cashOutImportAction" method="importVerfiData">
+	 		<result name="success">business/cashOut/bank_list_import_result.jsp</result>
+	 	</action>
+	 	<!--客服验证用户信息-->
+	 	<action name="goSetUserInfo" class="cashOutAction" method="goSetUserInfo">
+	 		<result name="success">business/userinfo/set_user_info.jsp</result>
+	 	</action>
+	 	<action name="setUserInfo" class="cashOutAction" method="setUserInfo">
+	 	</action>
+	 	<action name="importUserBankCard" class="cashOutAction" method="importUserBankCard">
+	 		<result name="success">business/userinfo/set_user_info_import.jsp</result>
+	 	</action>
+	 	<action name="importResultUserBankCard" class="cashOutImportAction" method="importResultUserBankCard">
+	 		<result name="success">business/userinfo/set_user_info_import_result.jsp</result>
+	 	</action>
+	 	
+		<!--二维码逻辑-->
+		<action name="qrCodeList" class="qrCodeAction" method="qrCodeList">
+			<result name="success">/admin/business/qrCode/qrlist.jsp</result>
+		</action>
+		<action name="loadAddQrCodePage" class="qrCodeAction" method="loadAddQrCodePage">
+			<result name="success">/admin/business/qrCode/addQrCodeInfo.jsp</result>
+		</action>
+		<action name="addQrCode" class="qrCodeAction" method="addQrCodeInfo">
+		</action>
+		<action name="delQrCode" class="qrCodeAction" method="deleteQrCodeInfo">
+		</action>
+		<!--收益分析模块-->
+		<action name="investmentAnalysis" class="businessAction" method="investmentAnalysis">
+			<result name="success">/admin/business/analysis/analysisList.jsp</result>
+		</action>
+		<action name="investmentAnalysisDetail" class="businessAction" method="investmentAnalysisDetail">
+			<result name="success">/admin/business/analysis/analysisDetail.jsp</result>
+		</action>
+		<action name="investmentAnalysisConfig" class="businessAction" method="investmentAnalysisConfig">
+			<result name="success">/admin/business/analysis/analysisConfig.jsp</result>
+		</action>
+		<action name="investmentAnalysisConfigSave" class="businessAction" method="investmentAnalysisConfigSave">
+			<result name="success">/admin/business/analysis/analysisConfig.jsp</result>
+		</action>
+		
+		<action name="rechangeList" class="businessAction" method="rechangeList">
+			<result name="success">/admin/business/userinfo/rechange_list.jsp</result>
+		</action>
+		<action name="gotoRechange" class="businessAction" method="gotoRechange">
+			<result name="success">/admin/business/userinfo/rechange.jsp</result>
+		</action>
+		<action name="rechangeSubmit" class="businessAction" method="rechangeSubmit">
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.common.security.po">
+	<class name="Modus" table="sec_modus" dynamic-update="true" dynamic-insert="true">
+	    <cache usage="read-write" />
+		<id name="moduId" type="java.lang.Integer"  column="ID">
+			 <generator class="increment" />
+		</id>
+		
+		<property name="name" type="java.lang.String" column="NAME" length="50" />
+		<property name="remark" type="java.lang.String" column="REMARK" length="200" />
+		<property name="moduGroupId" type="java.lang.Integer" column="MODU_GROUP_ID" ></property>
+	</class>
+</hibernate-mapping>

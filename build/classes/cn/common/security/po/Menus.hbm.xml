@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.common.security.po">
+	<class name="Menus" table="sec_menus" dynamic-update="true" dynamic-insert="true">
+	    <cache usage="read-write" />
+		<id name="menuId" type="java.lang.Integer"  column="ID">
+			 <generator class="increment" />
+		</id>
+		
+		<property name="name" type="java.lang.String" column="NAME" length="50" />
+		<property name="remark" type="java.lang.String" column="REMARK" length="50" />
+		<property name="url" type="java.lang.String" column="URL" length="100" />
+		<property name="target" type="java.lang.String" column="TARGET" length="50" />
+		<property name="parentId" type="java.lang.Long" column="PARENTID"  />
+		<property name="imgPath" column="IMG_PATH" type="java.lang.String"></property>
+		<property name="parentName" type="java.lang.String" formula="(select a.name from sec_menus a where a.id=PARENTID)"></property>
+		<property name="seq" type="java.lang.Double" column="SEQ" length="8" />
+	</class>
+</hibernate-mapping>

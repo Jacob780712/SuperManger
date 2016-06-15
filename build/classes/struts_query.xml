@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	<package name="query" namespace="/admin"  extends="default">
+	    <default-interceptor-ref name="myInterceptors" />
+		<action name="UserList" class="queryAction" method="UserList">
+			<result name="success">/admin/query/user_list.jsp</result>  
+	    </action>
+	    <action name="bankCardList" class="queryAction" method="bankCardList">
+			<result name="success">/admin/query/user_card_list.jsp</result>  
+	    </action>
+	    <action name="onDepositCardList" class="queryAction" method="onDepositCardList">
+			<result name="success">/admin/query/user_deposit_card_list.jsp</result>  
+	    </action>
+	    <action name="coDepositCardList" class="queryAction" method="coDepositCardList">
+			<result name="success">/admin/query/co_deposit_card_list.jsp</result>  
+	    </action>
+	    <action name="onSpendBillList" class="queryAction" method="onSpendBillList">
+			<result name="success">/admin/query/user_spend_bill_list.jsp</result>  
+	    </action>
+	    <action name="saleCardTotal" class="queryAction" method="saleCardTotal">
+			<result name="success">/admin/query/sale_card_totle_list.jsp</result>
+			<result name="datail">/admin/query/sale_card_detail_list.jsp</result>
+	    </action>
+	    <action name="listApayBill" class="queryAction" method="listApayBill">
+			<result name="success">/admin/query/order_pay_bill_list_A.jsp</result>
+	    </action>
+	    <action name="listBpayBill" class="queryAction" method="listBpayBill">
+			<result name="success">/admin/query/order_pay_bill_list_B.jsp</result>
+	    </action>
+	    <action name="detailBpayBill" class="queryAction" method="detailBpayBill">
+			<result name="success">/admin/query/order_pay_bill_detail_B.jsp</result>
+	    </action>
+	    <action name="listCoAccountBill" class="queryAction" method="listCoAccountBill">
+			<result name="success">/admin/query/co_account_bill_list.jsp</result>
+	    </action>
+	    <action name="listStmMerchant" class="queryAction" method="listStmMerchant">
+			<result name="success">/admin/query/stm_mermchant_list.jsp</result>
+	    </action>
+	    <action name="listPlatform" class="queryAction" method="listPlatform">
+			<result name="success">/admin/query/platform_list.jsp</result>
+	    </action>
+	    <action name="listCoAccount" class="queryAction" method="listCoAccount">
+			<result name="success">/admin/query/co_account_bill_list.jsp</result>
+	    </action>
+	    <action name="addCoAccountBlance" class="queryAction" method="addCoAccountBlance">
+	    </action>
+	    <action name="listCoAccountCz" class="queryAction" method="listCoAccountCz">
+	    	<result name="success">/admin/query/co_account_cz.jsp</result>
+	    </action>
+	    <action name="userPayInfo" class="queryAction" method="userPayInfo">
+	    	<result name="success">/admin/query/user_pay_info.jsp</result>
+	    </action>
+	    <action name="transData" class="queryAction" method="transData">
+	    	<result name="success">/admin/query/trans_data_list.jsp</result>
+	    </action>
+	    <action name="userBuyCard" class="queryAction" method="userBuyCard">
+	    	<result name="success">/admin/query/user_buy_card_list.jsp</result>
+	    </action>
+	    <action name="gsBuyCard" class="queryAction" method="gsBuyCard">
+	    	<result name="success">/admin/query/gs_buy_card_list.jsp</result>
+	    </action>
+	    <action name="userList" class="queryAction" method="userList">
+	    	<result name="success">/admin/query/user_trans_list.jsp</result>
+	    </action>
+		<!--二维查询相关-->
+		<action name="qrDailyDetailList" class="qrStatistAction" method="qrCodeDailySettlementDetialList">
+			<result name="success">/admin/query/qrcode_dailydetail_list.jsp</result>
+		</action>
+		<action name="qrDailyList" class="qrStatistAction" method="qrCodeDailySettlementList">
+			<result name="success">/admin/query/qrcode_daily_list.jsp</result>
+		</action>
+		<action name="qrStatList" class="qrStatistAction" method="qrStatList">
+			<result name="success">/admin/query/qrcode_state.jsp</result>
+		</action>
+		<!-- 查询统计修改 -->
+		<action name="transactionDetail" class="queryAction" method="transactionDetail">
+	    	<result name="success">/admin/query/user_trans_detail.jsp</result>
+	    </action>
+	    <action name="prepaidCardDetails" class="queryAction" method="prepaidCardDetails">
+	    	<result name="success">/admin/query/prepaid_card_details.jsp</result>
+	    </action>
+	    <action name="cardUserDetail" class="queryAction" method="cardUserDetail">
+	    	<result name="success">/admin/query/prepaid_card_user_detail.jsp</result>
+	    </action>
+	    <action name="coAccountDetail" class="queryAction" method="coAccountDetail">
+	    	<result name="success">/admin/query/co_account_bill_detail.jsp</result>
+	    </action>
+	    <action name="transactionDetailExport" class="queryAction" method="transactionDetailExport">
+	    </action>
+	    <action name="prepaidCardDetailsExport" class="queryAction" method="prepaidCardDetailsExport">
+	    </action>
+	    <action name="listPlatformExport" class="queryAction" method="listPlatformExport">
+	    </action>
+	    
+	    <action name="platShouru" class="queryAction" method="platShouru">
+	    	<result name="success">/admin/query/plat_shouru_list.jsp</result>
+	    </action>
+	    <action name="listPlatformShouruExport" class="queryAction" method="listPlatformShouruExport">
+	    </action>
+	    
+	</package>
+</struts>

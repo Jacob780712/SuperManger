@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/out/artifacts/SuperManger" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/WebContent/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/WebContent" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/common/security/dao/common_security_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/common/security/action/bc_security_action_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/common/security/service/common_security_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/query/query_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/query/query_action_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/query/query_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/mchant/mchant_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/mchant/mchant_action_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/mchant/mchant_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/tasking/tasking.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/tasking/task_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/tasking/task_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/business/business_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/business/business_action_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/business/business_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/settlement/settlement_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/settlement/settlement_action_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/cn/context/settlement/settlement_service_context.xml</file>
+          <file>file://$MODULE_DIR$/out/artifacts/SuperManger/WEB-INF/classes/business/resources/context/applicationContext-db-transaction.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/common/security/dao/common_security_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/common/security/action/bc_security_action_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/common/security/service/common_security_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/query/query_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/query/query_action_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/query/query_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/mchant/mchant_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/mchant/mchant_action_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/mchant/mchant_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/tasking/tasking.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/tasking/task_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/tasking/task_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/business/business_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/business/business_action_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/business/business_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/settlement/settlement_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/settlement/settlement_action_context.xml</file>
+          <file>file://$MODULE_DIR$/src/cn/context/settlement/settlement_service_context.xml</file>
+          <file>file://$MODULE_DIR$/src/business/resources/context/applicationContext-db-transaction.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/common/security/dao/common_security_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/common/security/action/bc_security_action_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/common/security/service/common_security_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/query/query_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/query/query_action_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/query/query_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/mchant/mchant_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/mchant/mchant_action_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/mchant/mchant_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/tasking/tasking.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/tasking/task_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/tasking/task_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/business/business_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/business/business_action_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/business/business_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/settlement/settlement_dao_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/settlement/settlement_action_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/cn/context/settlement/settlement_service_context.xml</file>
+          <file>file://$MODULE_DIR$/build/classes/business/resources/context/applicationContext-db-transaction.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib1" level="project" />
+  </component>
+</module>

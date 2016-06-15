@@ -1,0 +1,146 @@
+@charset "utf-8";
+HTML {
+	height:100%;
+}
+.topBody{
+	FONT-SIZE: 12px;
+	margin: 0px;
+	overflow:hidden;
+	color: #3e5706;
+	text-shadow: 1px 1px 1px rgba(255,255,255, .2);
+	height: 100%;
+	background: #3ABDEA;
+	background: -moz-linear-gradient(top,  #3ABDEA 0%, #1861AD 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3ABDEA), color-stop(100%,#1861AD));
+	background: -webkit-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: -o-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: -ms-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);	
+	-pie-background:linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	behavior: url(/css/claim/PIE.htc);
+}
+
+.leftBODY{
+	margin: 0px;
+	height: 100%;
+	background: #FFFFFF;
+}
+
+.bottombody{
+	margin: 0px;
+	background: #FFFFFF;
+	text-align:center;  
+	height: 100%;
+	background: #3ABDEA;
+	background: -moz-linear-gradient(top,  #3ABDEA 0%, #1861AD 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3ABDEA), color-stop(100%,#1861AD));
+	background: -webkit-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: -o-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: -ms-linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	background: linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);	
+	-pie-background:linear-gradient(top,  #3ABDEA 0%,#1861AD 100%);
+	behavior: url(../css/claim/PIE.htc);
+}
+
+.top_main {
+	height:100%;
+	width:100%;
+	
+}
+.top_main_top {
+	clear: both;
+	overflow: hidden;
+	height: 50%px;
+	padding-left:20px;
+}
+.top_main_top_left {
+	float: left;
+	
+	background-repeat: no-repeat;
+	height: 30%;
+	width: 343px;
+	margin-top: 4px;
+	margin-left: 5px;
+}
+.top_main_top_right {
+	text-align: right;
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+}
+.top_main_bom {
+	text-align: right;
+	margin-top: 3px;
+	margin-right: 15px;
+	color: #FFFFFF;
+}
+.top_main_otherbom {
+	height: 20%;
+	text-align: left;
+	margin-top: 3px;
+	margin-right: 15px;
+	color: #FFFFFF;
+}
+
+#nav li {
+    display: inline;
+    list-style-type: none;
+    float:left;
+    margin:2px;
+    height:35px;
+}
+
+.top_main_bott {
+	clear: both;
+	margin:0 auto;
+	align-text:center;
+}
+
+a.top_white:link {
+	color: #FFFFFF;
+}
+a.top_white:visited {
+	color: #FFFFFF;
+}
+a.top_white:hover {
+	color: #FFFF33;
+	text-decoration: underline;
+}
+a.top_yellow:link {
+	color: #FFFF33;
+}
+a.top_yellow:visited {
+	color: #FFFF33;
+}
+a.top_yellow:hover {
+	color: #FFFF00;
+	text-decoration: underline;
+}
+
+div.menu ul
+{
+    list-style:none; /* 去掉ul前面的符号 */
+    margin: 0px; /* 与外界元素的距离为0 */
+    padding: 13px 0px 0px 176px; /* 与内部元素的距离为0 */
+    width: auto; /* 宽度根据元素内容调整 */
+}
+/* 所有class为menu的div中的ul中的li样式 */
+div.menu ul li
+{
+    float:left; /* 向左漂移，将竖排变为横排 */
+}
+
+/* 所有class为menu的div中的ul中的a样式(鼠标移动到元素中的样式) */
+div.menu ul li a:hover
+{
+    background-color: #bfcbd6; /* 背景色 */
+    color: #465c71; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}
+/* 所有class为menu的div中的ul中的a样式(鼠标点击元素时的样式) */
+div.menu ul li a:active
+{
+    background-color: #bfcbd6; /* 背景色 */
+    color: #465c71; /* 文字颜色 */
+    text-decoration: none; /* 不显示超链接下划线 */
+}

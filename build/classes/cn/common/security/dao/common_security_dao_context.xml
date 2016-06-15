@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+    <bean id="commonSecurityDao.authDao" class="cn.common.security.dao.impl.AuthDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.menuDao" class="cn.common.security.dao.impl.MenuDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.moduDao" class="cn.common.security.dao.impl.ModuDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.roleAuthDao" class="cn.common.security.dao.impl.RoleAuthDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+		<property name="cacheObjectDao">
+			<ref bean="commons.cacheObjectDao"/>
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.roleDao" class="cn.common.security.dao.impl.RoleDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.userDao" class="cn.common.security.dao.impl.UserDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+	</bean>
+    <bean id="commonSecurityDao.userRoleDao" class="cn.common.security.dao.impl.UserRoleDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+		<property name="cacheObjectDao">
+			<ref bean="commons.cacheObjectDao"/>
+		</property>
+	</bean>
+	<bean id="commonSecurityDao.objectPrivilegeDao" class="cn.common.security.dao.impl.ObjectPrivilegeDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+		<property name="cacheObjectDao">
+			<ref bean="commons.cacheObjectDao"/>
+		</property>
+	</bean>
+	<bean id="commonSecurityDao.objectPrivilegeOptionDao" class="cn.common.security.dao.impl.ObjectPrivilegeOptionDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+		<property name="cacheObjectDao">
+			<ref bean="commons.cacheObjectDao"/>
+		</property>
+	</bean>
+	<bean id="commonSecurityDao.moduGroupDao" class="cn.common.security.dao.impl.ModuGroupDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory"/>
+		</property>
+	</bean>
+	
+	<bean id="commonSecurityDao.appProfileOptionDao" class="cn.common.security.dao.impl.AppProfileOptionDaoHbImpl">
+		<property name="sessionFactory">
+			<ref bean="businessSessionFactory" />
+		</property>
+		<property name="cacheObjectDao">
+			<ref bean="commons.cacheObjectDao"/>
+		</property>
+	</bean>	
+</beans>

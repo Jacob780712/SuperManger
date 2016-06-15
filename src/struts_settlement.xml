@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+	<package name="settlement" namespace="/admin"  extends="default">
+	    <default-interceptor-ref name="myInterceptors" />
+		<action name="setWechatList" class="settlementAction" method="setWechatList">
+			<result name="success">/admin/settlement/stm_wechat_list.jsp</result>  
+	    </action>
+	    <action name="setWechatSetmed" class="settlementAction" method="setWechatSetmed">
+	    </action>
+	    <action name="listStmMchDetail" class="settlementAction" method="listStmMchDetail">
+			<result name="success">/admin/settlement/stm_mchdetail_list.jsp</result>  
+	    </action>
+	    <action name="updateStmMchDetail" class="settlementAction" method="updateStmMchDetail">
+	    </action>
+		<action name="exportStmExcel" class="settlementAction" method="createBatchPaymentExcel">
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Tue Apr 17 21:43:19 CST 2007                         -->
+<hibernate-mapping package="cn.common.security.po">
+
+    <class name="SecAppProfileOptions" table="sec_app_profile_options">
+    	<cache usage="read-write"/>
+    	
+        <id name="optionId" column="option_id" type="integer">
+            <generator class="native"/>
+        </id>
+ 
+        <property name="appId" column="app_id" type="integer" />
+        <property name="optionName" column="option_name" type="string" />
+        <property name="optionDefaultValue" column="option_default_value" type="string" />
+        <property name="optionLevel" column="option_level" type="long" />
+        <property name="sequence" column="sequence" type="long" />
+    </class>
+    
+</hibernate-mapping>

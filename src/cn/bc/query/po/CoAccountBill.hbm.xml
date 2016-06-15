@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.query.po.CoAccountBill" table="co_account_bill" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="co_id" type="java.lang.Integer">
+            <column name="co_id"/>
+        </property>
+        <property name="order_number" type="java.lang.String">
+            <column name="order_number"/>
+        </property>
+        <property name="account_balance" type="java.lang.Integer">
+            <column name="account_balance"/>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount"/>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type"/>
+        </property>
+        <property name="source_id" type="java.lang.String">
+            <column name="source_id"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+        <property name="buyCardMchName" type="java.lang.String" formula="(select a.mch_name from mch_merchant a where 
+        	a.mch_number=(select b.mch_number from order_pay_card b where b.order_number=order_number))"></property>
+        <property name="shouruMchName" type="java.lang.String" formula="(select a.mch_name from mch_merchant a where 
+        	a.mch_number=(select b.mch_number from order_pay_bill b where b.order_number=order_number ))"></property>
+    </class>
+</hibernate-mapping>

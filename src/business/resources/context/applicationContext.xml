@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!--main applicationContext file-->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:business/resources/conf/*.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- i18n Resource文件bundles -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>resources/i18n/messages</value>
+                <value>resources/i18n/errors</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- EhCache Manager -->
+    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation">
+            <value>classpath:business/resources/conf/ehcache.xml</value>
+        </property>
+    </bean>
+    
+    
+</beans>

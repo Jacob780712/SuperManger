@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	
+	<constant name="struts.action.extension" value="jhtml" />
+    <constant name="struts.devMode" value="true" />
+    
+	<include file="struts_security.xml"/>
+	<include file="struts_mchant.xml"/>
+	<include file="struts_business.xml"/>
+	<include file="struts_query.xml"/>
+	<include file="struts_settlement.xml"/>
+	<package name="default" extends="struts-default">
+	<!-- 拦截器 -->  
+        <interceptors>   
+        	<!-- 权限拦截器 --> 
+            <interceptor name="privileges"  class="privilegesIterceptor"></interceptor> 
+            <!-- 拦截器栈 -->   
+            <interceptor-stack name="myInterceptors">  
+	             <!--配置自定义的拦截器-->  
+	             <interceptor-ref name="privileges">
+	             	<!--  <param name="excludeMethods">onList,onShow</param>-->
+	             </interceptor-ref> 
+	             <!--配置内建默认拦截器--> 
+	             <interceptor-ref name="defaultStack"></interceptor-ref>
+            </interceptor-stack>   
+        </interceptors> 
+        
+		<!-- 全局results配置--> 
+		<global-results>
+			<result name="exception">/common/exception.jsp</result>
+			<result name="error">/common/exception.jsp</result>
+			<result name="success">/common/message_tip.jsp</result>
+			<!-- 当返回login视图名时，转入/login.jsp页面 -->  
+ 			<result name="login" type="redirect">/admin/security/login.jsp</result>  
+		</global-results>
+
+		<!-- 异常处理--> 
+		<global-exception-mappings>
+			<exception-mapping exception="cn.bc.common.exception.BusinessException"
+				result="exception" />
+			<exception-mapping exception="java.lang.Exception"
+				result="exception" />
+		</global-exception-mappings>
+	</package>
+</struts>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.query.po.OnAccounts" table="on_accounts" >
+        <id name="accounts_id" type="java.lang.Integer">
+            <column name="accounts_id" />
+            <generator class="identity" />
+        </id>
+        <property name="user_id" type="java.lang.Integer">
+            <column name="user_id"/>
+        </property>
+        <property name="accounts_balance" type="java.lang.Integer">
+            <column name="accounts_balance"/>
+        </property>
+    </class>
+</hibernate-mapping>

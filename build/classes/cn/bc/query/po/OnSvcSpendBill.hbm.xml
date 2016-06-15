@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.bc.query.po.OnSvcSpendBill" table="on_svc_spend_bill">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="svc_id" type="java.lang.Integer">
+            <column name="svc_id"/>
+        </property>
+        <property name="actual_amount" type="java.lang.Integer">
+            <column name="actual_amount"/>
+        </property>
+        <property name="spend_amount" type="java.lang.Integer">
+            <column name="spend_amount"/>
+        </property>
+        <property name="svc_balance" type="java.lang.Integer">
+            <column name="svc_balance"/>
+        </property>
+        <property name="order_number" type="java.lang.String">
+            <column name="order_number"/>
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="type"/>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status"/>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark"/>
+        </property>
+        <property name="create_date" type="java.util.Date">
+            <column name="create_date"/>
+        </property>
+        <property name="create_person" type="java.lang.String">
+            <column name="create_person"/>
+        </property>
+        <property name="update_date" type="java.util.Date">
+            <column name="update_date" />
+        </property>
+        <property name="update_person" type="java.lang.String">
+            <column name="update_person"/>
+        </property>
+        <property name="mobile_phone" type="java.lang.String" formula="(select b.mobile_phone from on_users b where b.user_id=(select a.user_id from on_accounts a where a.accounts_id=(select c.accounts_id from on_deposit_card c where c.id=svc_id)))"></property>
+        <property name="full_name" type="java.lang.String" formula="(select b.full_name from on_users b where b.user_id=(select a.user_id from on_accounts a where a.accounts_id=(select c.accounts_id from on_deposit_card c where c.id=svc_id)))"></property>
+        <property name="ck_name" type="java.lang.String" formula="(select a.ck_name from mch_card_kinds a where a.id=(select c.ck_id from on_deposit_card c where c.id=svc_id))"></property>
+        <property name="ck_name_co" type="java.lang.String" formula="(select a.ck_name from mch_card_kinds a where a.id=(select c.ck_id from co_deposit_card c where c.id=svc_id))"></property>
+        <property name="ck_type" type="java.lang.String" formula="(select a.ck_type from mch_card_kinds a where a.id=(select c.ck_id from on_deposit_card c where c.id=svc_id))"></property>
+        <property name="ck_type_co" type="java.lang.String" formula="(select a.ck_type from mch_card_kinds a where a.id=(select c.ck_id from co_deposit_card c where c.id=svc_id))"></property>
+        <property name="svc_number" type="java.lang.String" formula="(select c.svc_number from on_deposit_card c where c.id=svc_id)"></property>
+        <property name="co_svc_number" type="java.lang.String" formula="(select c.svc_number from co_deposit_card c where c.id=svc_id)"></property>
+        <property name="mch_name" type="java.lang.String" formula="(select m.mch_name from mch_merchant m where m.mch_number=(select c.mch_number from on_deposit_card c where c.id=svc_id))"></property>
+        <property name="mch_name_co" type="java.lang.String" formula="(select m.mch_name from mch_merchant m where m.mch_number=(select c.mch_number from co_deposit_card c where c.id=svc_id))"></property>
+        <property name="co_name" type="java.lang.String" formula="(select a.co_name from co_account a where a.co_id=(select c.co_id from co_deposit_card c where c.id=svc_id))"></property>
+        <property name="co_tel" type="java.lang.String" formula="(select a.co_tel from co_account a where a.co_id=(select c.co_id from co_deposit_card c where c.id=svc_id))"></property>
+    </class>
+</hibernate-mapping>

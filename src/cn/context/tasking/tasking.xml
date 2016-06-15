@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	
+	<bean name="topTenTask" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="cn.bc.task.TaskMchantSettlement"></property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+				<entry key="service">
+					<ref bean="taskService"></ref>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean name="topTenTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="topTenTask"></ref>
+		</property>
+		<property name="cronExpression">  
+            <value>0 20 0 * * ?</value>  
+        </property>  
+	</bean>
+	
+	
+	<bean name="msgTask" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="cn.bc.task.TaskSendMesage"></property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+				<entry key="service">
+					<ref bean="queryService"></ref>
+				</entry>
+				<entry key="messageLogsService">
+					<ref bean="messageLogsService"></ref>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean name="msgTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="msgTask"></ref>
+		</property>
+		<property name="cronExpression">  
+            <value>0 0 21 * * ?</value>  
+        </property>  
+	</bean>
+	
+	
+	<bean name="qrTask" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="cn.bc.task.TaskQrCodeStatistics"></property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+				<entry key="qcStmService">
+					<ref bean="qrTaskService"></ref>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean name="qrTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="qrTask"></ref>
+		</property>
+		<property name="cronExpression">
+			<value>0 20 1 * * ?</value>
+		</property>
+	</bean>
+	
+		<bean name="analysisTask" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass" value="cn.bc.task.TaskAnalysisList"></property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+				<entry key="businessServices">
+					<ref bean="BusinessServices" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean name="analysisTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="analysisTask"></ref>
+		</property>
+		<property name="cronExpression">  
+            <value>0 13 15 * * ?</value>  
+        </property>  
+	</bean>
+	
+	
+	<bean autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+        <property name="triggers">  
+            <list>  
+                <ref bean="topTenTrigger" />  
+				<ref bean="analysisTrigger" /> 
+            </list>  
+        </property>  
+    </bean>  
+</beans>

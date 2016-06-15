@@ -1,0 +1,9 @@
+@charset "gb2312";
+*{
+font-size:12px;
+padding:0px;
+margin:0px;
+}
+#body{
+background-color:#f2f2f2;
+}

@@ -1,0 +1,46 @@
+@charset "gb2312";
+#foot #dixian{
+float:left;
+margin-top:8px;
+width:984px;
+height:1px;
+background-image:url(../images/baochunshouye_32.jpg);
+background-repeat:no-repeat;
+}
+#foot #zwz{
+width:650px;
+float:left;
+}
+#foot #ytp{
+width:330px;
+float:right;
+}
+#foot .diandi{
+width:984px;
+height:20px;
+float:left;
+}
+#foot #zwz #lianjie{
+	padding-top:22px;
+	float:right;
+	margin-right:0px;}
+#foot #zwz #lianjie .wenzi{
+font-size:12px;
+	color:#0088cc;}
+#foot #zwz #shengming{
+	float:left;
+	width:580px;
+	padding-top:8px;
+	padding-left:68px;
+	line-height: 18px;
+	text-align: right;
+}
+#foot #zwz #shengming .huise{
+font-size:12px;
+color:#999999;
+}
+#foot #ytp #dibiao{
+float:left;
+margin-top:42px;
+margin-left:20px;
+}

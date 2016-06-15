@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+
+	<package name="securityModu" namespace="/admin"  extends="default">
+	 <default-interceptor-ref name="myInterceptors" />
+	 <!-- 用户信息列表 -->
+	
+	 <action name="listUserAction" class="listUserAction">
+	 	<result name="success">security/user_list.jsp</result>
+	 </action>
+	 <!-- 修改密码 -->
+	 <action name="passWordMgtAction" class="passWordMgtAction">
+	 	<result name="preUpdatePassword">security/user_detail_password.jsp</result>
+	 </action>
+	  <action name="initPassWord" class="passWordMgtAction" method="init">
+	 </action>
+	 <!-- 用户退出 -->
+	 <action name="logOutAction" class="logOutAction">
+	 	<result name="success" type="redirect">./security/login.jsp</result>
+	 	<result name="iPad">../apple</result>
+	 	<result name="iPhone">../apple/iphone-success.htm</result>
+	 </action>
+	 <!-- 用户管理 -->
+	 <action name="userMgtAction" class="userMgtAction">
+	 	<result name="success" type="redirect">listUserAction!list.jhtml</result>
+	 	<result name="preSave">/admin/security/user_detail.jsp</result>
+	 	<result name="editSave">/admin/security/modifyUserInfo.jsp</result>
+	 	<result name="userpresave">/admin/security/user_detail.jsp</result>
+	 	<result name="useronremove">{url}</result>
+	 	<result name="presaveuserrole">/admin/security/mselect_role_list.jsp</result>
+	 	<result name="saveUserRole" type="redirect">listUserAction!list.jhtml</result>
+	 </action>
+	  <!-- 角色信息列表 -->
+	 <action name="listRoleAction" class="listRoleAction">
+	 	<result name="success">security/role_list.jsp</result>
+	 </action>
+	 <!-- 角色管理 -->
+	  <action name="roleMgtAction" class="roleMgtAction">
+	 	<result name="preSaveRoleAuth">/admin/security/sselect_menu_list.jsp</result>
+	 	<result name="saveRoleAuth" type="redirect">listRoleAction!list.jhtml</result>
+	 	<result name="preSave">/admin/security/role_detail.jsp</result>
+	 	<result name="success" type="redirect">listRoleAction!list.jhtml</result>
+	 </action>
+	
+	 <action name="loginAction" class="loginAction" method="login">
+	 	<result name="success">security/index.jsp</result>
+	 	<result name="iPad">../apple/main_ipad.jsp</result>
+	 	<result name="iPhone">../apple/main_iphone.jsp</result>
+	 </action>
+	 
+	 <!-- 权限管理 -->
+	 <action name="authMgtAction" class="authMgtAction">
+	 	<result name="authpresave">/admin/security/auth_detail.jsp</result>
+	 	<result name="authsave" type="redirect">listAuthAction!list.jhtml</result>
+	 	<result name="authonremove" type="redirect">listAuthAction!list.jhtml</result>
+	 </action>
+	 <!-- 权限信息列表 -->
+	 <action name="listAuthAction" class="listAuthAction">
+	    <result name="success">/admin/security/auth_list.jsp</result>
+	 </action>
+	 <!-- 菜单信息列表 -->
+	 <action name="listMenuAction" class="listMenuAction">
+	    <result name="success">/admin/security/menu_list.jsp</result>
+	 </action>
+	 <!-- 菜单管理 -->
+	 <action name="menuMgtAction" class="menuMgtAction">
+	    <result name="menupresave">/admin/security/menu_detail.jsp</result>
+	    <result name="menusave" type="redirect">listMenuAction!list.jhtml</result>
+	 	<result name="menuonremove" type="redirect">listMenuAction!list.jhtml</result>
+	 </action>
+	 <!-- 模块信息列表 -->
+	 <action name="listModuAction" class="listModuAction">
+	     <result name="success">/admin/security/modu_list.jsp</result>
+	 </action>
+	 <!-- 模块管理 -->
+	 <action name="moduMgtAction" class="moduMgtAction">
+	     <result name="modupresave">/admin/security/modu_detail.jsp</result>
+	    <result name="modusave" type="redirect">listModuAction!list.jhtml</result>
+	 	<result name="moduonremove" type="redirect">listModuAction!list.jhtml</result>
+	 </action>
+	 	 <!-- 数据权限管理 -->
+	 <action name="objectPrivilegeMgmtAction" class="objectPrivilegeMgmtAction">
+	    <result name="preSaveSuccess">/admin/security/object_privilege_detail.jsp</result>
+	 </action>
+	  <!-- 模块组信息列表 -->
+	 <action name="listModuGroupAction" class="listModuGroupAction">
+	     <result name="success">/admin/security/modugroup_list.jsp</result>
+	 </action>
+	 <!-- 模块组信息选择列表 -->
+	 <action name="listModuGroupActionSelect" class="listModuGroupAction">
+	     <result name="success">/admin/security/modugroup_list_mselect.jsp</result>
+	 </action>
+	 <!-- 模块组管理 -->
+	 <action name="moduGroupMgtAction" class="moduGroupMgtAction">
+	     <result name="moduGrouppresave">/admin/security/modugroup_detail.jsp</result>
+	    <result name="moduGroupsave" type="redirect">listModuGroupAction!list.jhtml</result>
+	 	<result name="moduGrouponremove" type="redirect">listModuGroupAction!list.jhtml</result>
+	 </action>
+	
+	<action name="queryMenuAction" class="listMenuAction" method="queryMenu">
+	    <result name="success">/admin/security/left.jsp</result>
+	 </action>
+	 
+	 <action name="tailFileAction" class="tailFileAction" method="index">
+	 	<result name="success">/admin/security/file_tail.jsp</result>
+	 </action>	 
+	 
+	<action name="preSaveAppProfileOption" class="appProfileOptionMgmtAction" method="preSave">
+	    <result name="success">/admin/security/app_profile_option_detail.jsp</result>
+	 </action>	 
+	<action name="saveAppProfileOption" class="appProfileOptionMgmtAction" method="save">
+	    <result name="success">/admin/security/app_profile_option_detail.jsp</result>
+	 </action>
+	 
+	 <action name="keepSessionAction" class="keepSessionAction" method="keepSession">
+	 </action>
+	
+	</package>
+</struts>

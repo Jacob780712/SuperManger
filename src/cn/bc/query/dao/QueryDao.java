@@ -1,0 +1,90 @@
+package cn.bc.query.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import cn.bc.business.po.OnUser;
+import cn.bc.common.support.page.Page;
+import cn.bc.query.bo.PlatFormRE;
+import cn.bc.query.bo.PlatShuoru;
+import cn.bc.query.po.CoAccount;
+import cn.bc.query.po.CoAccountBill;
+import cn.bc.query.po.CoDepositCard;
+import cn.bc.query.po.OnBankCard;
+import cn.bc.query.po.OnDepositCard;
+import cn.bc.query.po.OnSvcSpendBill;
+import cn.bc.query.po.OrderPayBill;
+import cn.bc.query.vo.CoAccountBillFilter;
+import cn.bc.query.vo.DepositCardFilter;
+import cn.bc.query.vo.Filter;
+import cn.bc.query.vo.OrderPayBillFilter;
+import cn.bc.query.vo.OrderSubPayCardFilter;
+import cn.bc.query.vo.PrepaidCardDetails;
+import cn.bc.query.vo.SvcSpendBillFilter;
+import cn.bc.query.vo.TransDataBo;
+import cn.bc.query.vo.TransDataFilter;
+import cn.bc.query.vo.TransactionDetail;
+import cn.bc.query.vo.UserFilter;
+import cn.bc.settlement.vo.StmMerchantFilter;
+
+public interface QueryDao {
+	public Page listUser(UserFilter filter);
+	public List<OnUser> tjUser(UserFilter filter);
+	public List<Object> listUserBalance(UserFilter filter);
+	public List<OnBankCard> listBankCard(String userId);
+	public void update();
+	public void save();
+	public Page listDepositCard(DepositCardFilter filter);
+	public List<OnDepositCard> DepositCard(DepositCardFilter filter);
+	public Page listCoDepositCard(DepositCardFilter filter);
+	public List<CoDepositCard> coDepositCard(DepositCardFilter filter);
+	public Page listSvcSpendBill(SvcSpendBillFilter filter);
+	public List<OnSvcSpendBill> OnSvcSpendBillList(SvcSpendBillFilter filter);
+	public Page listOrderPayCard(OrderSubPayCardFilter filter);
+	public List<Object> listTotle(OrderSubPayCardFilter filter);
+	public Page listApayBill(OrderPayBillFilter filter);
+	public Page listBpayBill(OrderPayBillFilter filter) throws Exception;
+	public List<OrderPayBill> listpayBill(OrderPayBillFilter filter)throws Exception;
+	public List<OnSvcSpendBill> DetailBpayBill(String orderNumber, String mobile);
+	public Page listCoAccountBill(CoAccountBillFilter filter);
+	public CoAccount CoAccountBillTotal();
+	public Page listStmMerchant(StmMerchantFilter filter);
+	public Page listPlatform(Filter filter) throws Exception;
+	public List<PlatFormRE> platFormTotle(Filter filter) throws Exception;
+	public Page listCoAccountBill(Filter filter) throws Exception;
+	public List<CoAccountBill> listCoAccount(Filter filter) throws Exception;
+	public void addCoAccountBlance(int amount, String name) throws Exception;
+	public CoAccount CoAccountDetail();
+	public Page listCoAccountCz(Filter filter);
+	public List<CoAccountBill> CoAccountCz(Filter filter) throws Exception;
+	public Page userPayInfo(Filter filter, String user_id);
+	public Page transData(TransDataFilter filter);
+	public List<TransDataBo> transDataList(TransDataFilter filter);
+	public Page userBuyCard(TransDataFilter filter);
+	public List<TransDataBo> userBuyCardList(TransDataFilter filter);
+	public Page gsBuyCard(TransDataFilter filter);
+	public List<TransDataBo> gsBuyCardList(TransDataFilter filter);
+	public Page userTrans(TransDataFilter filter);
+	public List<TransDataBo> userTransList(TransDataFilter filter);
+	/*
+	 * 查询统计修改
+	 */
+	public Page transactionDetail(OrderPayBillFilter filter);
+	public List<TransactionDetail> transactionDetailExport(OrderPayBillFilter filter);
+	public boolean isMember(int userId, String mchNumber);
+	public Page prepaidCardDetails(DepositCardFilter filte);
+	public List<PrepaidCardDetails> prepaidCardDetailsExport(DepositCardFilter filter);
+	public Page cardUserDetail(Filter filter);
+	public String cardBalance();
+	public Page listCoAccountDetail(Filter filter);
+	public List<PlatFormRE> listPlatformExport(Filter filter) throws Exception;
+	public Page platShouru(Filter filter);
+	public List<PlatShuoru> platShouruList(Filter filter);
+	public TransDataBo getData(TransDataFilter filter);
+	public int getBalance(int userId);
+	public int getCardCount(int userId);
+	public int getPayCount(int userId);
+	public String getQudao(String openId);
+	public Map<String,Integer> getSpendAmout(String orderNumber);
+	public Map<String,Object> getBranchAndCount(String id, String accounts_id);
+}
